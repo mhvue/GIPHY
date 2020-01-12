@@ -29,16 +29,16 @@ var queryURL= "https://api.giphy.com/v1/gifs/search?api_key=" + API
 //for ajax to call it 
 
 $(".femaleArtist").on("click", function () {
-    $(this).val()
-        console.log($(this.val()));
-    
+    $(this).attr("data-name");
+    console.log($(this).attr("data-name"));
     //console.log("click");
+
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function(response) {
         //console.log(response.data[0].images);
-        console.log(response);
+       // console.log(response);
 
        // for(var j =0; j < response.data.length; j++) {
 
