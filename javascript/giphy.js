@@ -2,7 +2,7 @@
 var topics = ["taylorswift",  "Beyonce", "Celine Dione", "Christina Aguilera", "Katy Perry", "Lady Gaga", "Brittney Spears", "Rhianna", 
 "Ariana Grande","Adele"];
 
-singerButtons();
+
 //creating buttons for each singer above
 function singerButtons () {
     $(".singerButtons").empty();
@@ -16,23 +16,24 @@ function singerButtons () {
         }
        
 };
-
+singerButtons();
 //have get the value of the strings from the array tied to button click  
-
-//setting up my api with gifphy  
-var API= "0LXaBTUDz62eiqycLJFendA0KcZxuHfR"
-var queryURL= "https://api.giphy.com/v1/gifs/search?api_key=" + API
- + "&q="+ topics[0]+ "&limit=10&offset=0&rating=G&lang=en";
 
 
 //create a on click event in which it will "read" from array when user selects a button
 //for ajax to call it 
 
 $(".femaleArtist").on("click", function () {
-    $(this).attr("data-name");
-    console.log($(this).attr("data-name"));
+    var femaleArtist= $(this).attr("data-name");
+   // console.log(femaleArtist);
     //console.log("click");
 
+//setting up my api with gifphy  
+var API= "0LXaBTUDz62eiqycLJFendA0KcZxuHfR"
+var queryURL= "https://api.giphy.com/v1/gifs/search?api_key=" + API
+ + "&q="+ femaleArtist+ "&limit=10&offset=0&rating=G&lang=en";
+
+ 
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -40,14 +41,14 @@ $(".femaleArtist").on("click", function () {
         //console.log(response.data[0].images);
        // console.log(response);
 
-       // for(var j =0; j < response.data.length; j++) {
+       for(var j =0; j < response.data.length; j++) {
 
             //testing for index at 0 
-           // var taylorGifURL = response.data[j].images.fixed_height.url;
-           // var taylorGif = $("<img>").attr("src", taylorGifURL);
-            //$(".giphsHere").append(taylorGif);
+          var femaleArtistGifURL = response.data[j].images.fixed_height.url;
+           var femaleArtisitGif = $("<img>").attr("src", femaleArtistGifURL);
+           $(".giphsHere").append(femaleArtisitGif);
     
-       // }
+       }
     });
     
 
