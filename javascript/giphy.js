@@ -1,6 +1,6 @@
 
 //array of strings 
-var topics = ["Taylor Swift",  "Beyonce", "Celine Dione", "Christina Aguilera", "Katy Perry", "Lady Gaga", "Brittney Spears", "Rhianna", 
+var topics = ["Taylor Swift",  "Beyonce", "Kelly Clarkson", "Christina Aguilera", "Katy Perry", "Lady Gaga", "Brittney Spears", "Rhianna", 
 "Ariana Grande","Adele"];
 
 
@@ -9,7 +9,10 @@ function singerButtons () {
     $(".singerButtons").empty();
 
     for (var i = 0; i < topics.length; i++) {
-        var buttons = $("<button>").addClass("femaleArtistButton").attr("data-name", topics[i]).text(topics[i]);
+        var buttons = $("<button>");
+        buttons.addClass("femaleArtistButton");
+        buttons.attr("data-name", topics[i]);
+        buttons.text(topics[i]);
         
         $(".singerButtons").append(buttons);
 
@@ -76,13 +79,14 @@ var queryURL= "https://api.giphy.com/v1/gifs/search?api_key=" + API
                 $(this).attr("src", $(this).attr("data-animate"));//change the src to this same pics attr with "data-animate"
                 $(this).attr("data-state", "animate"); //update this state to animate..attr to animate now 
         
-            };
-        });
+            };//closure for if
+        });//closure for click function
 
        
     
 
-    });
-});
+    });//closure for .then function 
+});//closure for one click
+
 //pics are constantly appending per press of each button. need to fix
 
