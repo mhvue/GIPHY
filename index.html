@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>GIPHY API</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> <!--- should always go above my js file-->
    
 <!--leaving the style css here for now..-->
     <style type="text/css">
@@ -41,8 +41,10 @@
         <div class ="col-md-12 searchInfoHere">
             <form id="femaleSingers-form">
                 <br>
-                <label for="femaleSingers-input">Which Female Artist Are You Looking For?</label>
-                <input type="text" id="femaleSingers-input"><br>          
+                <label for="femaleSingers-input">Which Female Artist Are You Looking For?</label><br>
+                <input type="text" id="femaleSingers-input">
+                <input id="submitButton" type="submit" value="Submit">  
+                </form>      
         </div>
     </div>
 </div>

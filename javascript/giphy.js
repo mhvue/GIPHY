@@ -1,3 +1,5 @@
+$(document).ready(function() {
+
 
 //array of strings 
 var topics = ["Taylor Swift",  "Beyonce", "Kelly Clarkson", "Christina Aguilera", "Katy Perry", "Lady Gaga", "Brittney Spears", "Rhianna", 
@@ -20,18 +22,20 @@ function singerButtons () {
         }
        
 };
+
 singerButtons();
+gettingGifs();
 
-
-$(".femaleArtistButton").one("click", function () {
-    var femaleArtist= $(this).attr("data-name");
+function gettingGifs () { 
+$(".femaleArtistButton").on("click", function () {
+    var femaleArtist = $(this).attr("data-name");
     console.log(femaleArtist);
     //console.log("click");
 
-//setting up my api with gifphy  
-var API= "0LXaBTUDz62eiqycLJFendA0KcZxuHfR";
-var queryURL= "https://api.giphy.com/v1/gifs/search?api_key=" + API
- + "&q="+ femaleArtist+ "&limit=10&offset=0&rating=G&lang=en";
+    //setting up my api with gifphy  
+    var API = "0LXaBTUDz62eiqycLJFendA0KcZxuHfR";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + API
+        + "&q=" + femaleArtist + "&limit=10&offset=0&rating=G&lang=en";
 
  
     $.ajax({
@@ -41,52 +45,76 @@ var queryURL= "https://api.giphy.com/v1/gifs/search?api_key=" + API
         //console.log(response.data[0].images);
        console.log(response);
 
-       for(var j =0; j < response.data.length; j++) {
+        for (var j = 0; j < response.data.length; j++) {
 
-       // still GIF 
-        var gifStill = response.data[j].images.fixed_height_still.url;
+            // still GIF 
+            var gifStill = response.data[j].images.fixed_height_still.url;
 
-        //animated GIF
-        var femaleArtistGif = response.data[j].images.fixed_height.url;
+            //animated GIF
+            var femaleArtistGif = response.data[j].images.fixed_height.url;
 
-        //getting the ratings 
-        var getRatings = response.data[j].rating;
-
-
-        var gifsHolder = $("<img>");
-        gifsHolder.attr("src", gifStill);
-        gifsHolder.attr("data-still", gifStill);
-        gifsHolder.attr("data-animate", femaleArtistGif);
-        gifsHolder.addClass("gifImg");
-        gifsHolder.attr("data-state", "still"); //this is how image shows 1st when user clicks on button
+            //getting the ratings 
+            var getRatings = response.data[j].rating;
 
 
-        //displaying  the the still and ratings
-        $(".giphsHere").prepend(gifsHolder);
-        //console.log(gifsHolder);
-        var pRatings= $("<p>").text("Rating: " + getRatings);
-        $(".giphsHere").prepend(pRatings, gifsHolder)
+            var gifsHolder = $("<img>");
+            gifsHolder.attr("src", gifStill);
+            gifsHolder.attr("data-still", gifStill);
+            gifsHolder.attr("data-animate", femaleArtistGif);
+            gifsHolder.addClass("gifImg");
+            gifsHolder.attr("data-state", "still"); // b/c this is how image shows 1st when user clicks on button
+
+
+            //displaying  the the still and ratings on HTML
+            $(".giphsHere").prepend(gifsHolder);
+            //console.log(gifsHolder);
+            var pRatings = $("<p>").text("Rating: " + getRatings);
+            $(".giphsHere").prepend(pRatings, gifsHolder)
+
+        };//closure for loop
+
+    //$(".giphsHere").empty();
+
+    $(".gifImg").on("click", function () {
+         //console.log("click");
+         var stillAttrImg = $(this).attr("data-state");
+        // console.log(stillAttrImg);
+
+        //this if/else is allowing the "animated" effect by a click 
+        if (stillAttrImg === "still") {
+         $(this).attr("src", $(this).attr("data-animate"));//change the src to this same img but grabbing the attr with "data-animate"
+         $(this).attr("data-state", "animate"); //update this state to animate..attr is animate now 
+            //console.log($(this));
+        }
+        else {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still")
+        }
+
+     });//closure for click on .gifImg
+
+    });//closure for ajax/.then function 
     
-    };//closure for loop
+});//closure for on click on femaleArtistButton
 
-        $(".gifImg").on("click", function () {
-            console.log("click");
-            var stillAttrImg = $(this).attr("data-state");
-            console.log(stillAttrImg);
+};//closure for gettingGifs func
 
-            //     
-            if (stillAttrImg === "still") {
-                $(this).attr("src", $(this).attr("data-animate"));//change the src to this same pics attr with "data-animate"
-                $(this).attr("data-state", "animate"); //update this state to animate..attr to animate now 
-        
-            };//closure for if
-        });//closure for click function
+//Next to make form that will take user input and add to topics array 
+$("#submitButton").on("click", function() {
+    event.preventDefault();
 
-       
-    
+    var userFemaleArtist = $("#femaleSingers-input").val(); //we are getting the text from search bar 
+   // console.log(userFemaleArtist);
 
-    });//closure for .then function 
-});//closure for one click
+    topics.push(userFemaleArtist);
 
-//pics are constantly appending per press of each button. need to fix
+    singerButtons();
 
+    gettingGifs();
+});
+
+//console.log(topics); //check array if userFemaleArtist added 
+
+
+
+});//closure for doc.ready
