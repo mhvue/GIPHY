@@ -1,22 +1,38 @@
 body{
     background-image: url("../images/listeningMusicBackground.jpg");
-    background-size: 1400px;
+    background-size: 1380px;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
 
 
-button,div,form,input,img {
+button,div,form,input {
 margin: 5px;
 }
 
-h1 {
+input {
+    width: 200px;
+}
+
+h1, h3{
     text-align: center;
     font-weight: bold;
 }
 
-#ratingsText, label {
+h3 {
+    margin-top: 10x;
+    font-style: italic;
+}
+
+ label {
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+#ratingsText {
     font-weight: bold;
     color: white;
     font-size: 20px;
@@ -29,9 +45,25 @@ h1 {
 
 .giphsHere {
     overflow:auto;
+    width: 300px;
+    /* border: 2px solid white; */
 }
-img, #ratingsText {
-    float: right;
-    width: 30%;
- 
+img, #ratingsText{
+    position: relative;
+    margin-left: 30%;
+}
+
+button{
+    background-color: #FF1493;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px;
+    cursor:pointer;
+    width: 200px;
+}
+
+button:hover {
+    opacity: 0.5;
+    color: black;
 }

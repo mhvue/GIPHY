@@ -67,8 +67,8 @@ $(".femaleArtistButton").on("click", function () {
             //displaying  the the still and ratings on HTML
             $(".giphsHere").prepend(gifsHolder);
             //console.log(gifsHolder);
-            var pRatings = $("<h3 id='ratingsText'>").text("Rating: " + getRatings);
-            $(".giphsHere").prepend(pRatings, gifsHolder)
+            var getRatings = $("<h3 id='ratingsText'>").text("Rating: " + getRatings.toUpperCase());
+            $(".giphsHere").prepend(getRatings, gifsHolder)
 
         };//closure for loop
 
