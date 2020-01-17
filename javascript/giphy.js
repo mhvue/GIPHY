@@ -22,7 +22,6 @@ function singerButtons () {
         }
        
 };
-
 singerButtons();
 gettingGifs();
 
@@ -68,7 +67,7 @@ $(".femaleArtistButton").on("click", function () {
             //displaying  the the still and ratings on HTML
             $(".giphsHere").prepend(gifsHolder);
             //console.log(gifsHolder);
-            var pRatings = $("<p>").text("Rating: " + getRatings);
+            var pRatings = $("<h3 id='ratingsText'>").text("Rating: " + getRatings);
             $(".giphsHere").prepend(pRatings, gifsHolder)
 
         };//closure for loop
@@ -82,8 +81,8 @@ $(".femaleArtistButton").on("click", function () {
 
         //this if/else is allowing the "animated" effect by a click 
         if (stillAttrImg === "still") {
-         $(this).attr("src", $(this).attr("data-animate"));//change the src to this same img but grabbing the attr with "data-animate"
-         $(this).attr("data-state", "animate"); //update this state to animate..attr is animate now 
+         $(this).attr("src", $(this).attr("data-animate"));//change the src to this img by grabbing the attr with "data-animate" of SAME img
+         $(this).attr("data-state", "animate"); //update the state to animate..attr is animate now 
             //console.log($(this));
         }
         else {
@@ -105,16 +104,31 @@ $("#submitButton").on("click", function() {
 
     var userFemaleArtist = $("#femaleSingers-input").val(); //we are getting the text from search bar 
    // console.log(userFemaleArtist);
-
+  
     topics.push(userFemaleArtist);
 
     singerButtons();
 
     gettingGifs();
+
+
+    // if (userFemaleArtist ===  {
+    //     alert("double");
+    // }
+
+     // empty textbox 
+     $("#femaleSingers-input").val("");
 });
 
-//console.log(topics); //check array if userFemaleArtist added 
 
 
+//console.log(topics); //checking topics array if userFemaleArtist added 
+
+//TO DO 
+//make it so we don't keep previous gifs clicked 
+
+//write if for duplicates as we don't want that 
+
+//get gifs to line next to each other 
 
 });//closure for doc.ready
