@@ -72,10 +72,10 @@ $(".femaleArtistButton").on("click", function () {
 
         };//closure for loop
 
-    //$(".giphsHere").empty();
+        eraseDiv();
+
 
     $(".gifImg").on("click", function () {
-         //console.log("click");
          var stillAttrImg = $(this).attr("data-state");
         // console.log(stillAttrImg);
 
@@ -93,10 +93,11 @@ $(".femaleArtistButton").on("click", function () {
      });//closure for click on .gifImg
 
     });//closure for ajax/.then function 
-    
+  
 });//closure for on click on femaleArtistButton
 
 };//closure for gettingGifs func
+
 
 //Next to make form that will take user input and add to topics array 
 $("#submitButton").on("click", function() {
@@ -111,21 +112,24 @@ $("#submitButton").on("click", function() {
 
     gettingGifs();
 
-
     // if (userFemaleArtist ===  {
     //     alert("double");
     // }
 
      // empty textbox 
-     $("#femaleSingers-input").val("");
+     $("#femaleSingers-input").val("");   
 });
 
 
+function eraseDiv () {
+    $(".giphsHere").empty().prepend("");
+}
 
-//console.log(topics); //checking topics array if userFemaleArtist added 
+console.log(eraseDiv());
+//console.log(topics); //checking topics array if userFemaleArtist added in array
 
 //TO DO 
-//make it so we don't keep previous gifs clicked 
+//make it so we don't keep previous gifs clicked .empty not working?? 
 
 //write if for duplicates as we don't want that 
 

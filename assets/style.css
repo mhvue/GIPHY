@@ -1,6 +1,6 @@
 body{
     background-image: url("../images/listeningMusicBackground.jpg");
-    background-size: 1380px;
+    background-size: 1800px;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -20,10 +20,10 @@ h1, h3{
     font-weight: bold;
 }
 
-h3 {
+/* h3 {
     margin-top: 10x;
     font-style: italic;
-}
+} */
 
  label {
     font-weight: bold;
@@ -36,7 +36,6 @@ h3 {
     font-weight: bold;
     color: white;
     font-size: 20px;
-    text-align: center;
 }
 
 .searchInfoHere {
@@ -46,11 +45,11 @@ h3 {
 .giphsHere {
     overflow:auto;
     width: 300px;
-    /* border: 2px solid white; */
+    border: 2px solid white; 
 }
 img, #ratingsText{
-    position: relative;
-    margin-left: 30%;
+    float: right;
+    padding: 20px;
 }
 
 button{
