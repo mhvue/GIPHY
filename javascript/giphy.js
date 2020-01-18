@@ -72,8 +72,7 @@ $(".femaleArtistButton").on("click", function () {
 
         };//closure for loop
 
-        eraseDiv();
-
+    
 
     $(".gifImg").on("click", function () {
          var stillAttrImg = $(this).attr("data-state");
@@ -121,11 +120,6 @@ $("#submitButton").on("click", function() {
 });
 
 
-function eraseDiv () {
-    $(".giphsHere").empty().prepend("");
-}
-
-console.log(eraseDiv());
 //console.log(topics); //checking topics array if userFemaleArtist added in array
 
 //TO DO 

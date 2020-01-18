@@ -5,8 +5,6 @@ body{
     background-attachment: fixed;
 }
 
-
-
 button,div,form,input {
 margin: 5px;
 }
@@ -15,15 +13,20 @@ input {
     width: 200px;
 }
 
-h1, h3{
+h1 {
     text-align: center;
-    font-weight: bold;
 }
 
-/* h3 {
+h3 {
     margin-top: 10x;
     font-style: italic;
-} */
+    font-weight: bold;
+    /* background-color: lightpink; */
+    width: 400px;
+    /* margin-left:30%; */
+    margin-bottom:-50px;
+
+}
 
  label {
     font-weight: bold;
@@ -34,8 +37,10 @@ h1, h3{
 
 #ratingsText {
     font-weight: bold;
-    color: white;
+    /* color: white; */
     font-size: 20px;
+    color: #FF1493;
+
 }
 
 .searchInfoHere {
@@ -45,11 +50,11 @@ h1, h3{
 .giphsHere {
     overflow:auto;
     width: 300px;
-    border: 2px solid white; 
+    /* border: 2px solid white;  */
 }
 img, #ratingsText{
-    float: right;
-    padding: 20px;
+    margin-left: 30%;
+    margin-bottom: 10px;
 }
 
 button{
@@ -65,4 +70,13 @@ button{
 button:hover {
     opacity: 0.5;
     color: black;
+}
+
+input {
+    margin-bottom: 15px;
+}
+
+p {
+    position: fixed;
+    bottom: 0;
 }
