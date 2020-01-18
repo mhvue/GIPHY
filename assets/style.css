@@ -18,7 +18,7 @@ h1 {
 }
 
 h3 {
-    margin-top: 10x;
+    margin-top: 10px;
     font-style: italic;
     font-weight: bold;
     /* background-color: lightpink; */
@@ -79,4 +79,59 @@ input {
 p {
     position: fixed;
     bottom: 0;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    body {
+    background-size: 1000px;
+    }
+
+
+    #clickMeMsg {
+     text-align: center;
+     /* background-color: white;
+     border: 2px solid #FF1493;*/
+    } 
+
+    .searchInfoHere {
+        width: 455px;
+        padding-bottom: 10px;
+    }
+
+    input {
+        margin: 0 auto;
+        width: 150px;
+    }
+
+    #ratingsText {
+        text-align: left;
+    }
+
+}
+
+@media screen and (max-width: 640px) {
+    body {
+        background-size: 820px;
+        }
+
+    button {
+        font-size: 15px;
+    }
+
+    #clickMeMsg {
+        font-size: 25px;
+
+       } 
+
+    input {
+        margin: 0 auto;
+       
+    }
+    .searchInfoHere {
+        margin: 0 auto;
+        width: 400px;
+    }
+
+
 }
