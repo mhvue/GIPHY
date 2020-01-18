@@ -1,6 +1,6 @@
 body{
-    background-image: url("../images/listeningMusicBackground.jpg");
-    background-size: 1800px;
+    background-image: url("../images/headphonesBackground.jpg");
+    background-size: 1600px;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -9,22 +9,26 @@ button,div,form,input {
 margin: 5px;
 }
 
+
+
 input {
     width: 200px;
 }
 
+
 h1 {
     text-align: center;
+    color: white;
 }
 
 h3 {
     margin-top: 10px;
     font-style: italic;
     font-weight: bold;
-    /* background-color: lightpink; */
     width: 400px;
     /* margin-left:30%; */
-    margin-bottom:-50px;
+    margin-bottom:-30px;
+    margin-left: 60px;
 
 }
 
@@ -79,6 +83,7 @@ input {
 p {
     position: fixed;
     bottom: 0;
+    color: white;
 }
 
 /* Media Queries */
@@ -87,21 +92,42 @@ p {
     background-size: 1000px;
     }
 
+    button {
+        margin-left: 20px;
+        font-size: 17px;
+    }
 
-    #clickMeMsg {
+    #singerButtons {
+        margin-left: 50px;
+    }
+    
+    h3 {
      text-align: center;
-     /* background-color: white;
-     border: 2px solid #FF1493;*/
+     font-size: 25px;
+     margin-right: 50px;
+     margin-left: 10px;
     } 
 
     .searchInfoHere {
         width: 455px;
-        padding-bottom: 10px;
+        padding-bottom: 20px;
+        margin-left: 20px;
+    }
+
+    label {
+        font-size: 18px;
+        margin-left: 100px;
+    }
+
+
+    #femaleSingers-input {
+        margin-left: 50px;
     }
 
     input {
         margin: 0 auto;
         width: 150px;
+        margin-right: 5px;
     }
 
     #ratingsText {
@@ -130,7 +156,7 @@ p {
     }
     .searchInfoHere {
         margin: 0 auto;
-        width: 400px;
+        width: 380px;
     }
 
 

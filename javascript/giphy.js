@@ -92,7 +92,9 @@ $(".femaleArtistButton").on("click", function () {
      });//closure for click on .gifImg
 
     });//closure for ajax/.then function 
-  
+
+    $(".giphsHere").empty();//this needs to be here to allow div to empty before adding more gifs
+
 });//closure for on click on femaleArtistButton
 
 };//closure for gettingGifs func
