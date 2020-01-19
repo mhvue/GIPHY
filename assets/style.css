@@ -9,7 +9,9 @@ button,div,form,input {
 margin: 5px;
 }
 
-
+#clickMsg {
+    color: white;
+}
 
 input {
     width: 200px;
@@ -87,129 +89,4 @@ p {
     position: fixed;
     bottom: 0;
     color: white;
-}
-
-/* Media Queries */
-@media screen and (max-width: 980px) {
-    body {
-        background-size: 1200px;
-    }
-
-    #clickMsg {
-        text-align: center;
-        position: absolute;
-        margin-left: 120px;
-    }
-
-   
-}
-
-
-
-@media screen and (max-width: 768px) {
-    body {
-    background-size: 1000px;
-    }
-
-    button {
-        margin-left: 20px;
-        font-size: 17px;
-    }
-
-    #singerButtons {
-        margin-left: 50px;
-    }
-    
-    #clickMsg {
-     text-align: center;
-     font-size: 25px;
-     margin-left:-3px;
-    } 
-
-    .searchInfoHere {
-        width: 455px;
-        padding-bottom: 20px;
-        margin-left: 20px;
-    }
-
-    label {
-        font-size: 18px;
-        margin-left: 100px;
-    }
-
-
-    #femaleSingers-input {
-        margin-left: 50px;
-    }
-
-    input {
-        margin: 0 auto;
-        width: 150px;
-        margin-right: 5px;
-    }
-
-    #ratingsText {
-        text-align: left;
-    }
-
-
-}
-
-@media screen and (max-width: 640px) {
-    body {
-        background-size: 820px;
-        }
-
-    input {
-        margin: 0 auto;
-       
-    }
-    .searchInfoHere {
-        margin: 0 auto;
-        width: 350px;
-    }
-
-    label {
-        position: absolute;
-        margin-left: 50px;
-
-    }
-    #submitButton {
-        margin-top: 10px;
-        margin-left:70px;
-    }
-
-    .singerButtons {
-        margin-left: 30px;
-    }
-
-    #femaleSingers-form {
-        margin: 0 auto;
-    }
-
-    #femaleSingers-input {
-        width:200px;
-    }
-
-    button {
-        margin-left: 50px;
-        width: 150px;
-        margin-right: -20px;
-    }
-
-    #clickMsg {
-        margin-left: 50px;
-        position: absolute;
-        margin-top:-20px;
-    }
-
-    img {
-        width:250px;
-    }
-
-
-    .giphsHere {
-        margin-left:40px;
-    }
-
 }
