@@ -113,22 +113,8 @@ $("#submitButton").on("click", function() {
 
     gettingGifs();
 
-    // if (userFemaleArtist ===  {
-    //     alert("double");
-    // }
-
-     // empty textbox 
+     // empty textbox afer user press submit 
      $("#femaleSingers-input").val("");   
 });
-
-
-//console.log(topics); //checking topics array if userFemaleArtist added in array
-
-//TO DO 
-//make it so we don't keep previous gifs clicked .empty not working?? 
-
-//write if for duplicates as we don't want that 
-
-//get gifs to line next to each other 
 
 });//closure for doc.ready
