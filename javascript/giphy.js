@@ -56,13 +56,13 @@ $(".femaleArtistButton").on("click", function () {
 
             //displaying  the the still and ratings on HTML
             $(".giphsHere").prepend(gifsHolder);
-            //console.log(gifsHolder);
+            
             var getRatings = $("<h3 id='ratingsText'>").text("Rating: " + getRatings.toUpperCase());
             $(".giphsHere").prepend(getRatings, gifsHolder)
         };//closure for loop
     $(".gifImg").on("click", function () {
          var stillAttrImg = $(this).attr("data-state");
-        // console.log(stillAttrImg);
+        
         
         if (stillAttrImg === "still") {
          $(this).attr("src", $(this).attr("data-animate"));//change the src to this img by grabbing the attr with "data-animate" of SAME img
@@ -78,6 +78,7 @@ $(".femaleArtistButton").on("click", function () {
     $(".giphsHere").empty();//this needs to be here to allow div to empty before adding more gifs
 });//closure for on click on femaleArtistButton
 };//closure for gettingGifs func
+
 //Next to make form that will take user input and add to topics array 
 $("#submitButton").on("click", function() {
     event.preventDefault();
