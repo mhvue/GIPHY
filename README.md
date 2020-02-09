@@ -4,6 +4,7 @@ Click on the pregenerated buttons and it'll load gifs associated with name of th
 
 <p align= "center">
 Click on each gif to watch the gif in action!
+
 Static when initally displayed: <img src="https://media2.giphy.com/media/aQXMVdhMErR3a/200_s.gif?cid=5dfcdcf169e71b440c9fde71efd6d37275dabf2fdfa4be48&rid=200_s.gif"> 
 When clicked: <img src="https://media2.giphy.com/media/aQXMVdhMErR3a/200.gif?cid=5dfcdcf169e71b440c9fde71efd6d37275dabf2fdfa4be48&rid=200.gif">
 </p>
