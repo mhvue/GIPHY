@@ -83,12 +83,22 @@ $(".femaleArtistButton").on("click", function () {
 $("#submitButton").on("click", function() {
     event.preventDefault();
     var userFemaleArtist = $("#femaleSingers-input").val(); //we are getting the text from search bar 
-   // console.log(userFemaleArtist);
+
+    if(userFemaleArtist == "") {
+        function formEmpty() {
+            alert("whoops...you forgot to enter something in")
+        }
+
+        formEmpty();
+    }
+   else{
     topics.push(userFemaleArtist);
     singerButtons();
     gettingGifs();
      // empty textbox afer user press submit 
-     $("#femaleSingers-input").val("");   
+     $("#femaleSingers-input").val(""); 
+   }
+     
 });
 
 });//closure for doc.ready
