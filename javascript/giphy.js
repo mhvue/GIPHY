@@ -79,25 +79,30 @@ $(".femaleArtistButton").on("click", function () {
 });//closure for on click on femaleArtistButton
 };//closure for gettingGifs func
 
+function formEmpty() {
+    $("#femaleSingers-input").css("background-color", "yellow");
+}
+
 //Next to make form that will take user input and add to topics array 
 $("#submitButton").on("click", function() {
     event.preventDefault();
     var userFemaleArtist = $("#femaleSingers-input").val(); //we are getting the text from search bar 
 
     if(userFemaleArtist == "") {
-        function formEmpty() {
-            alert("whoops...you forgot to enter something in")
-        }
-
         formEmpty();
+    
     }
+
    else{
+    $("#femaleSingers-input").css("background-color", "white") 
     topics.push(userFemaleArtist);
     singerButtons();
     gettingGifs();
      // empty textbox afer user press submit 
      $("#femaleSingers-input").val(""); 
-   }
+
+     
+    }
      
 });
 
