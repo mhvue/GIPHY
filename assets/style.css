@@ -27,8 +27,6 @@ h4 {
     margin-top: 10px;
     font-style: italic;
     font-weight: bold;
-    /* width: 400px; */
-    /* margin-left:30%; */
     margin-bottom:-30px;
     margin-left: 60px;
 
@@ -46,6 +44,9 @@ h4 {
     /* color: white; */
     font-size: 20px;
     color: #FF1493;
+    float:left;
+    position: relative;
+    left:130px;
 
 }
 
@@ -57,14 +58,19 @@ h4 {
     width: 300px;
     /* border: 2px solid white;  */
 }
-img, #ratingsText{
-    margin-left: 30%;
-    margin-bottom: 10px;
-}
-
 img {
+    float:left;
+    padding: 5px;
     width: 300px;
+    margin-top:40px;
 }
+/* from w3 schools */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
 
 button{
     background-color: #FF1493;

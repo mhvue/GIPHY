@@ -9,11 +9,7 @@ function singerButtons () {
     $(".singerButtons").empty();
 
     for (var i = 0; i < topics.length; i++) {
-        var buttons = $("<button>");
-        buttons.addClass("femaleArtistButton");
-        buttons.attr("data-name", topics[i]);
-        buttons.text(topics[i]);
-        
+        var buttons = $("<button>").addClass("femaleArtistButton").attr("data-name", topics[i]).text(topics[i]);
         $(".singerButtons").append(buttons);
         }
        
@@ -46,13 +42,8 @@ $(".femaleArtistButton").on("click", function () {
             //getting the ratings 
             var getRatings = response.data[j].rating;
 
-            var gifsHolder = $("<img>");
-            gifsHolder.attr("src", gifStill);
-            gifsHolder.attr("data-still", gifStill);
-            gifsHolder.attr("data-animate", femaleArtistGif);
-            gifsHolder.addClass("gifImg");
-            gifsHolder.attr("data-state", "still"); // b/c this is how image shows 1st when user clicks on button
-
+            var gifsHolder = $("<img>").attr("src", gifStill).attr("data-still", gifStill).attr("data-animate", femaleArtistGif).addClass("gifImg").attr("data-state", "still");
+             // data-state b/c this is how image shows 1st when user clicks on button
 
             //displaying  the the still and ratings on HTML
             $(".giphsHere").prepend(gifsHolder);
@@ -60,9 +51,9 @@ $(".femaleArtistButton").on("click", function () {
             var getRatings = $("<h3 id='ratingsText'>").text("Rating: " + getRatings.toUpperCase());
             $(".giphsHere").prepend(getRatings, gifsHolder)
         };//closure for loop
+
     $(".gifImg").on("click", function () {
          var stillAttrImg = $(this).attr("data-state");
-        
         
         if (stillAttrImg === "still") {
          $(this).attr("src", $(this).attr("data-animate"));//change the src to this img by grabbing the attr with "data-animate" of SAME img
@@ -84,25 +75,33 @@ function formEmpty() {
 }
 
 //Next to make form that will take user input and add to topics array 
-$("#submitButton").on("click", function() {
+$("#submitButton").on("click", function(event) {
     event.preventDefault();
     var userFemaleArtist = $("#femaleSingers-input").val(); //we are getting the text from search bar 
 
-    if(userFemaleArtist == "") {
-        formEmpty();
+    //informing user of duplicate entries
+    for (var i = 0; i < topics.length; i++) {
+        if(userFemaleArtist == topics[i]) {
+            console.log(topics[i])
+            return alert("duplciate! Already entered. Try again.")
+        }
     
     }
 
+    if(userFemaleArtist == "") {
+        formEmpty();
+    }
+
    else{
-    $("#femaleSingers-input").css("background-color", "white") 
+    $("#femaleSingers-input").css("background-color", "white");
     topics.push(userFemaleArtist);
     singerButtons();
     gettingGifs();
      // empty textbox afer user press submit 
      $("#femaleSingers-input").val(""); 
 
-     
     }
+    
      
 });
 
