@@ -14,8 +14,6 @@ function singerButtons () {
         }
        
 };
-singerButtons();
-gettingGifs();
 
 function gettingGifs () { 
 $(".femaleArtistButton").on("click", function () {
@@ -30,9 +28,6 @@ $(".femaleArtistButton").on("click", function () {
         url: queryURL,
         method: "GET"
     }).then(function(response) {
-        //console.log(response.data[0].images);
-       console.log(response);
-
         for (var j = 0; j < response.data.length; j++) {
 
             // still GIF 
@@ -46,24 +41,24 @@ $(".femaleArtistButton").on("click", function () {
              // data-state b/c this is how image shows 1st when user clicks on button
 
             //displaying  the the still and ratings on HTML
-            $(".giphsHere").prepend(gifsHolder);
+           // $(".giphsHere").prepend(gifsHolder);
             
             var getRatings = $("<h3 id='ratingsText'>").text("Rating: " + getRatings.toUpperCase());
             $(".giphsHere").prepend(getRatings, gifsHolder)
         };//closure for loop
 
-    $(".gifImg").on("click", function () {
-         var stillAttrImg = $(this).attr("data-state");
+        $(".gifImg").on("click", function () {
+            var stillAttrImg = $(this).attr("data-state");
         
-        if (stillAttrImg === "still") {
-         $(this).attr("src", $(this).attr("data-animate"));//change the src to this img by grabbing the attr with "data-animate" of SAME img
-         $(this).attr("data-state", "animate"); //update the state to animate..attr is animate now 
-            //console.log($(this));
-        }
-        else {
-            $(this).attr("src", $(this).attr("data-still"));
-            $(this).attr("data-state", "still")
-        }
+            if (stillAttrImg === "still") {
+                $(this).attr("src", $(this).attr("data-animate"));//change the src to this img by grabbing the attr with "data-animate" of SAME img
+                $(this).attr("data-state", "animate"); //update the state to animate..attr is animate now 
+                //console.log($(this));
+            }
+            else {
+                $(this).attr("src", $(this).attr("data-still"));
+                $(this).attr("data-state", "still")
+            }
      });//closure for click on .gifImg
     });//closure for ajax/.then function 
     $(".giphsHere").empty();//this needs to be here to allow div to empty before adding more gifs
@@ -74,6 +69,9 @@ function formEmpty() {
     $("#femaleSingers-input").css("background-color", "yellow");
 }
 
+singerButtons();
+gettingGifs();
+
 //Next to make form that will take user input and add to topics array 
 $("#submitButton").on("click", function(event) {
     event.preventDefault();
@@ -82,10 +80,9 @@ $("#submitButton").on("click", function(event) {
     //informing user of duplicate entries
     for (var i = 0; i < topics.length; i++) {
         if(userFemaleArtist == topics[i]) {
-            console.log(topics[i])
+            $("#femaleSingers-input").val(""); 
             return alert("duplciate! Already entered. Try again.")
         }
-    
     }
 
     if(userFemaleArtist == "") {
@@ -97,7 +94,6 @@ $("#submitButton").on("click", function(event) {
     topics.push(userFemaleArtist);
     singerButtons();
     gettingGifs();
-     // empty textbox afer user press submit 
      $("#femaleSingers-input").val(""); 
 
     }

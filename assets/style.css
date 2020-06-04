@@ -54,16 +54,27 @@ h4 {
     border: 5px solid white;
 }
 
+
 .giphsHere {
-    width: 300px;
-    /* border: 2px solid white;  */
+    display: grid;
+    grid-template-columns: 100px 200px 200px 100px;
+    grid-template-rows: 30% 30% 30% 30%;
+    margin-left: auto;
+    margin-right: auto;
 }
+/* .giphsHere {
+    width: 300px;
+    /* border: 2px solid white;  
+} */
+
+
 img {
-    float:left;
+    /* float:left;
     padding: 5px;
     width: 300px;
-    margin-top:40px;
-}
+    margin-top:40px; */
+    display: block
+} 
 /* from w3 schools */
 .row::after {
     content: "";
